@@ -1,6 +1,30 @@
-<!doctype html>
-<html>
-  <body>
-    <p>This is a blank webpage.</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBModFastDL Files</title>
+</head>
+<body>
+    <h1>JBModFastDL Files</h1>
+    <ul id="fileList"></ul>
+
+    <script>
+        fetch('https://pokemak0.github.io/JBModFastDL/JBMod/maps/')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const links = doc.querySelectorAll('a[href]');
+
+                const fileList = document.getElementById('fileList');
+                links.forEach(link => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<a href="${link.href}">${link.textContent}</a>`;
+                    fileList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error fetching files:', error));
+    </script>
+</body>
 </html>
