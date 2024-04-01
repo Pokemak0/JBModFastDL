@@ -1,30 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JBModFastDL Files</title>
-</head>
-<body>
-    <h1>JBModFastDL Files</h1>
-    <ul id="fileList"></ul>
+list of files
 
-    <script>
-        fetch('https://pokemak0.github.io/JBModFastDL/JBMod/maps/')
-            .then(response => response.text())
-            .then(data => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(data, 'text/html');
-                const links = doc.querySelectorAll('a[href]');
+jb_backrooms_v1.bsp.bz2
+	
+jb_beans.bsp.bz2
+	
+jb_bowling.bsp.bz2
+	
+jb_bspplane.bsp.bz2
+	
+jb_buildingalyx.bsp.bz2
+	
+jb_flatsandpit.bsp.bz2
+	
+jb_gibland_v3.bsp.bz2
+	
+jb_grnscrn.bsp.bz2
+	
+jb_hotel.bsp.bz2
+	
+jb_nightcity.bsp.bz2
+	
+jb_pool.bsp.bz2
+	
+jb_super_open_megamap.bsp.bz2
+	
+jb_ufo.bsp.bz2
+	
+jb_uggy.bsp.bz2
+	
+jbdm_blockfort.bsp.bz2
+	
+jbdm_dam_c.bsp.bz2
+	
+jbdm_frenzy_a.bsp.bz2
+	
+jbdm_industrial_test_a_scrap.bsp.bz2
+	
+jbdm_metro_early_bc.bsp.bz2
+	
+jbdm_port_c.bsp.bz2
+	
+jbdm_prison_a.bsp.bz2
+	
+jbdm_rebel_d.bsp.bz2
+	
+jbdm_runoff_ac.bsp.bz2
+	
+jbdm_station_b.bsp.bz2
+	
+jbdm_the_classic_c.bsp.bz2
+	
+rp_downtown_v4c_v2.bsp
+	
+rp_downtown_v4c_v2.bsp.bz2
 
-                const fileList = document.getElementById('fileList');
-                links.forEach(link => {
-                    const listItem = document.createElement('li');
-                    listItem.innerHTML = `<a href="${link.href}">${link.textContent}</a>`;
-                    fileList.appendChild(listItem);
-                });
-            })
-            .catch(error => console.error('Error fetching files:', error));
-    </script>
-</body>
-</html>
+syn_sevenhourwar_part1.bsp.bz2
